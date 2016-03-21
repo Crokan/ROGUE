@@ -1,4 +1,0 @@
-4.6.7p3:2.1.0.0
-StandaloneWindows
-C:/Program Files (x86)/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Managed/UnityEngine.dll
-C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.7/Standalone/UnityEngine.UI.dll
