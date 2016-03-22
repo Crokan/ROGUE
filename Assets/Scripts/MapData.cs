@@ -7,15 +7,6 @@ namespace ROGUE {
 
     public class MapData : MonoBehaviour {
 
-        int Width = 0;
-        int Height = 0;
-
-        int mMapId;
-
-        EDirection mStartDir;
-
-        public TextAsset MapDataFile;
-
         enum EFloorType
         {
             NoEntry,
@@ -36,6 +27,17 @@ namespace ROGUE {
             DOWN,
             LEFT,
         };
+
+
+        int Width = 0;
+        int Height = 0;
+
+        int mMapId = 0;
+
+        EDirection mStartDir = EDirection.NUTRAL;
+
+        public TextAsset MapDataFile;
+
 
         string[] mColumnNames;
 

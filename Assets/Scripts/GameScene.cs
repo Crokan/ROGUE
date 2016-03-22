@@ -20,7 +20,6 @@ namespace ROGUE
             MapData map = Instantiate(mCurrentMap) as MapData;
             map.InstanciateMap();
 
-            Vector2 start = map.StartPoint;
 	    }
 	
 	    // Update is called once per frame

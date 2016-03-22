@@ -44,7 +44,6 @@ public class MapCreator : MonoBehaviour {
         {
             for (int j = 0; j < Height; ++j)
             {
-                Vector3 pos = new Vector3(i, 0, j);
 
                 int index = i * Width + j;
                 if (i == 0)
