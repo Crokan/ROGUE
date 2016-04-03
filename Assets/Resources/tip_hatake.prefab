@@ -25,6 +25,7 @@ GameObject:
   - 4: {fileID: 440336}
   - 33: {fileID: 3358926}
   - 23: {fileID: 2362620}
+  - 64: {fileID: 6428804}
   m_Layer: 0
   m_Name: hatake
   m_TagString: Untagged
@@ -89,6 +90,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168502}
+  m_Mesh: {fileID: 4300000, guid: 44fcd7847ec1d2b41a0b19d4e8ee81f0, type: 3}
+--- !u!64 &6428804
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 44fcd7847ec1d2b41a0b19d4e8ee81f0, type: 3}
 --- !u!1001 &100100000
 Prefab:

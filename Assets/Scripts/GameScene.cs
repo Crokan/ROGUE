@@ -25,7 +25,6 @@ namespace ROGUE
             {
                 for (int w = 0; w < width; ++w)
                 {
-                    Debug.Log(h * height + w);
                     if (types[h * height + w] == FloorType.Hatake)
                     {
                         GameObject obj = Instantiate<GameObject>(hatake);

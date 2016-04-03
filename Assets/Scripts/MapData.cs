@@ -67,42 +67,5 @@ namespace ROGUE
             }
 
         }
-
-        public void InstanciateMap()
-        {
-            //for (int i = 0; i < Width; ++i)
-            {
-                //for (int j = 0; j < Height; ++j)
-                {
-                    //Vector3 pos = new Vector3(i, 0, j);
-
-                    //int index = i * Width + j;
-
-                    GameObject floorObject = null;
-                    /*
-                    switch (mMapTypes[index])
-                    {
-                        case EFloorType.NoEntry:
-                            floorObject = Instantiate(NoEntryObject, pos, new Quaternion()) as GameObject;
-                            break;
-                        case EFloorType.Enter:
-                            //floorObject = Instantiate(EnterObject, pos, new Quaternion()) as GameObject;
-                            break;
-                        case EFloorType.Normal:
-                            //floorObject = Instantiate(NormalObject, pos, new Quaternion()) as GameObject;
-                            break;
-                        case EFloorType.Wall:
-                            floorObject = Instantiate(WallObject, pos, new Quaternion()) as GameObject;
-                            break;
-                    }
-                    */
-                    if (null != floorObject)
-                    {
-                        //floorObject.transform.SetParent(transform, false);
-                    }
-                }
-            }
-        }
-
     }
 }
