@@ -11,12 +11,18 @@ namespace ROGUE
 
         public PlayerController Player;
 
+        // カメラ追跡距離
+        public float camTraceSpeed = 1.0f;
+        public float camTraceMin = 0.5f;
+        public float camTraceMax = 1.0f;
+
+
         FloorType[] types;
         int width;
         int height;
 
-	    // Use this for initialization
-	    void Start () {
+	    void Start ()
+        {
             MapData data = new MapData();
             data.Deserialize(map);
 
@@ -27,6 +33,8 @@ namespace ROGUE
             {
                 for (int w = 0; w < width; ++w)
                 {
+                    //Debug.Log(h * height + w);
+                    
                     if (types[h * height + w] == FloorType.Hatake)
                     {
                         GameObject obj = Instantiate<GameObject>(hatake);
@@ -41,7 +49,34 @@ namespace ROGUE
 	
 	    void Update ()
         {
-            Camera.main.transform.LookAt(Player.transform);
+            Transform camraTransform = Camera.main.transform;
+            camraTransform.LookAt(Player.transform);
+
+            Vector3 pos2d = camraTransform.position;
+            Vector3 posPly = Player.transform.position;
+
+            pos2d.y = 0.0f;
+            posPly.y = 0.0f;
+
+            Vector3 camToPos = posPly - pos2d;
+
+            float diff = 0.0f;
+            if (camToPos.sqrMagnitude > (camTraceMax * camTraceMax))
+            {
+                Debug.Log("max:");
+
+                diff = camToPos.magnitude - camTraceMax;
+                //diff = diff > camTraceMax ? camTraceMax : diff;
+            }
+            else if (camToPos.sqrMagnitude < (camTraceMin * camTraceMin))
+            {
+                Debug.Log("min");
+
+                diff = camToPos.magnitude - camTraceMin;
+                //diff = diff > camTraceMin ? camTraceMin : diff;
+            }
+
+            camraTransform.position += camToPos.normalized * diff;
 	    }
     }
 }
