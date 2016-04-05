@@ -9,6 +9,8 @@ namespace ROGUE
         public TextAsset map;
         public GameObject hatake;
 
+        public PlayerController Player;
+
         FloorType[] types;
         int width;
         int height;
@@ -37,9 +39,9 @@ namespace ROGUE
 
 	    }
 	
-	    // Update is called once per frame
-	    void Update () {
-            
+	    void Update ()
+        {
+            Camera.main.transform.LookAt(Player.transform);
 	    }
     }
 }

@@ -6,31 +6,42 @@ public class PlayerController : MonoBehaviour {
     public GameObject Model;
     public float MoveSpeed;
     public Camera MainCamera;
+    
+    Vector3 DesirePosition;
 
 	void Start ()
     {
-	
+        DesirePosition = transform.position;
 	}
 	
 	void Update ()
     {
-        RaycastHit hit;
-        Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
-        
-        Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100);
-
-        if (Physics.Raycast(ray, out hit))
+        // 左クリック中のみ移動
+        if (Input.GetMouseButtonDown(0))
         {
-            Transform objectHit = hit.transform;
-            Vector3 start = transform.position;
-            Vector3 goal = hit.transform.position;
-            start.y = 0.0f;
-            goal.y = 0.0f;
+            RaycastHit hit;
+            Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
+            
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 100);
+            
+            if (Physics.Raycast(ray, out hit))
+            {
+                DesirePosition = hit.transform.position;
+            }
 
-            transform.position += (goal - start).normalized * MoveSpeed * Time.deltaTime;
-
-            // Do something with the object that was hit by the raycast.
+            return;
         }
 
+        Vector3 start = transform.position;
+        Vector3 goal = DesirePosition;
+        Vector3 move = (goal - start).normalized * MoveSpeed * Time.deltaTime;
+
+        if (move.sqrMagnitude >= (goal - start).sqrMagnitude)
+        {
+            move = goal - start;
+        }
+
+        transform.position += move;
+        
 	}
 }
