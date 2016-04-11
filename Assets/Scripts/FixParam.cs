@@ -3,9 +3,13 @@ using System.Collections;
 
 namespace ROGUE
 {
-    public class FixParam
+    public class Json_FixParam
     {
 
+    }
+
+    public class FixParam
+    {
 
     }
 }

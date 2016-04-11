@@ -11,6 +11,8 @@ namespace ROGUE
 
         public PlayerController Player;
 
+        public TextAsset json;
+
         // カメラ追跡距離
         public float camTraceSpeed = 1.0f;
         public float camTraceMin = 0.5f;
@@ -25,6 +27,13 @@ namespace ROGUE
         {
             MapData data = new MapData();
             data.Deserialize(map);
+
+/*
+            //JSONテキストのデコード.
+            LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject(json.text);
+            LitJson.JsonData d = jsonData["fix"];
+            string year = (string)d["year"];
+*/
 
             width = data.mMapData.Width;
             height = data.mMapData.Height;

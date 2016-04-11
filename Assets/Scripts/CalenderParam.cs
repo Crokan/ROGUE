@@ -23,7 +23,7 @@ namespace ROGUE
         
         public void Desrialize(string json)
         {
-            LitJson.JsonMapper.ToObject<
+            LitJson.JsonMapper.ToObject<CalenderParam>(json);
         }
     }
 }

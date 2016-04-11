@@ -505,6 +505,7 @@ MonoBehaviour:
   map: {fileID: 4900000, guid: cee6fa3b4e8118c43a7b86515c60d537, type: 3}
   hatake: {fileID: 111050, guid: a11f8410add9a5c44be83e88108d3d31, type: 2}
   Player: {fileID: 226064431}
+  json: {fileID: 4900000, guid: 5fab1ab36aa18e34d9eb5daf687ebdad, type: 3}
   camTraceSpeed: 1
   camTraceMin: 1
   camTraceMax: 5
