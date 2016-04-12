@@ -8,6 +8,7 @@ namespace ROGUE
 #region Parameters
         static GameManager mInstance;
 
+        static public MasterParam Master;
 #endregion
 
         private GameManager() { }
@@ -22,12 +23,6 @@ namespace ROGUE
                 }
                 return mInstance;
             }
-        }
-
-
-        void Awake()
-        {
-
         }
     }
 }

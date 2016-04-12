@@ -8,9 +8,12 @@ namespace ROGUE
     {
         public int year;
         public int month;
+        public int daysec;
         public int clocksec;
-        public int ElpsMin;
-        public int ClockMin;
+        public int elpsmin;
+        public int clockmin;
+
+
     }
 
     public class CalenderParam
@@ -23,7 +26,7 @@ namespace ROGUE
         
         public void Desrialize(string json)
         {
-            LitJson.JsonMapper.ToObject<CalenderParam>(json);
+            //LitJson.JsonMapper.ToObject<CalenderParam>(json);
         }
     }
 }

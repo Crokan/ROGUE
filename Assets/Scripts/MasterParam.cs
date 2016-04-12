@@ -6,12 +6,20 @@ namespace ROGUE
 
     public class Json_MasterParam
     {
-        Json_FixParam fix;
-        Json_CalenderParam calender;
+        //public Json_FixParam fix;
+        public Json_CalenderParam calender;
     }
 
     public class MasterParam
     {
-    
+        //Json_FixParam Fix;
+        Json_CalenderParam Calender;
+
+
+        public void Deserialize(Json_MasterParam json)
+        {
+            //Fix = json.fix;
+            Calender = json.calender;
+        }
     }
 }
