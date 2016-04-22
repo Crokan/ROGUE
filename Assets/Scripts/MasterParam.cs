@@ -6,13 +6,13 @@ namespace ROGUE
 
     public class Json_MasterParam
     {
-        //public Json_FixParam fix;
+        public Json_FixParam fix;
         public Json_CalenderParam calender;
     }
 
     public class MasterParam
     {
-        //Json_FixParam Fix;
+        Json_FixParam Fix;
         Json_CalenderParam Calender;
 
 

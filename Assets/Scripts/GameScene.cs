@@ -28,19 +28,11 @@ namespace ROGUE
             MapData data = new MapData();
             data.Deserialize(map);
 
-
-            //JSONテキストのデコード.
-            /*
-
-                        LitJson.JsonData jsonData = LitJson.JsonMapper.ToObject<(json.text);
-                        LitJson.JsonData d = jsonData["fix"];
-                        string year = (string)d["year"];
-
-            */
-
             Json_MasterParam master = LitJson.JsonMapper.ToObject<Json_MasterParam>(json.text);
             Json_CalenderParam d = master.calender;
-            int year = d.year;
+            CalenderParam cp = new CalenderParam();
+            cp.Desrialize(d);
+            int year = cp.Year;
 
 
             width = data.mMapData.Width;

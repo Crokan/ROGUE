@@ -20,13 +20,19 @@ namespace ROGUE
     {
         public int Year;        // １年経つまでの月
         public int Month;       // １月経つまでの日
-        public int clocksec;    // １クロックに必要なリアル秒
+        public int Daysec;      // リアル秒でゲーム時間１日
+        public int ClockSec;    // １クロックに必要なリアル秒
         public int ElpsMin;     // １クロックで進むゲーム分
         public int ClockMin;    // 時計に反映される分単位
         
-        public void Desrialize(string json)
+        public void Desrialize(Json_CalenderParam json)
         {
-            //LitJson.JsonMapper.ToObject<CalenderParam>(json);
+            Year = json.year;
+            Month = json.month;
+            Daysec = json.daysec;
+            ClockSec = json.clocksec;
+            ElpsMin = json.elpsmin;
+            ClockMin = json.clockmin;
         }
     }
 }
